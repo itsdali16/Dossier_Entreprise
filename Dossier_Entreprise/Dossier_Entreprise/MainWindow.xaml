@@ -1,0 +1,90 @@
+﻿<Window x:Class="Dossier_Entreprise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dossier_Entreprise"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="" Height="500" Width="720"
+        WindowState="Maximized"
+        >
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid VerticalAlignment="top">
+            <StackPanel Orientation="Horizontal"  VerticalAlignment="Top" HorizontalAlignment="Left">
+
+                <Button  Click="addHandler" Foreground="BlueViolet" Style="{StaticResource IconButton}">
+                    Ajouter
+                </Button>
+                <!--<Menu>
+                    <MenuItem HorizontalAlignment="Left">
+                        <MenuItem.Header>
+                            <WrapPanel VerticalAlignment="Top">
+                                <TextBlock Text="Impression" Margin="0,0,10,0" />
+                                <materialDesign:PackIcon Kind="Printer" />
+                            </WrapPanel>
+                        </MenuItem.Header>
+                        <MenuItem Header="Etat de Reception" Click="EtatReception_Print_Click" MinWidth="135" />
+                        <Separator />
+                        <MenuItem Header="Etat de Livraison" Click="EtatLivraison_Print_Click" MinWidth="135" />
+                        <Separator />
+                        <MenuItem Header="Etat de Moteur" Click="EtatMoteur_Print_Click" MinWidth="135" />
+                        <Separator />
+                        <MenuItem Header="Etat de Installe" Click="EtatMoteurInstalle_Print_Click" MinWidth="135" />
+                        <Separator />
+                        <MenuItem Header="Etat de Depose" Click="EtatMoteurDepose_Print_Click" MinWidth="135" />
+                    </MenuItem>
+                </Menu>-->
+            </StackPanel>
+
+            <Button  VerticalAlignment="Center" Foreground="BlueViolet" HorizontalAlignment="Right"  Click="refresh" Style="{StaticResource IconButton}">
+                <materialDesign:PackIcon Kind="Refresh" />
+            </Button>
+        </Grid>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Stretch">
+            <StackPanel Orientation="Horizontal">
+                <!--<Button Margin="0,10" HorizontalAlignment="Center" Background="Transparent" BorderBrush="Transparent" Width="500" Height="100" Style="{StaticResource MaterialDesignFloatingActionDarkButton}">-->
+                <Image x:Name="photo" Width="auto" Height="auto" Stretch="None" UseLayoutRounding="True" SnapsToDevicePixels="True" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                <!--</Button>-->
+            </StackPanel>
+
+            <TextBox Name="filter" materialDesign:HintAssist.Hint="Recherche" TextChanged="recherche"
+                     Width="200" HorizontalAlignment="Left" />
+        </StackPanel>
+        <DataGrid Name="datagrid" Grid.Row="2" SelectionChanged="datagridSelectionChanged"  HorizontalAlignment="Stretch">
+            <!--<DataGrid.Resources>
+                    <Style TargetType="DataGridRow">
+                        <EventSetter Event="MouseDoubleClick" Handler="listDataGridDbClick" />
+                    </Style>
+                </DataGrid.Resources>-->
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Éditer Fiche" Click="edit_fiche_click" />
+                    <MenuItem Header="Supprimer Fiche" Click="delete_fiche_click" />
+                    <MenuItem Header="Imprimer Fiche" Click="imprimer_fiche_click" />
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Visibility="Hidden" Binding="{Binding Path=id}"/>
+                <DataGridTextColumn Header="Nom  Prenom" Width="auto" Binding="{Binding Path=nom_complet}"/>
+                <DataGridTextColumn Header="Nationalite" Width="auto" Binding="{Binding Path=nationalite}"/>
+                <DataGridTextColumn Header="Entreprise" Width="auto" Binding="{Binding Path=entreprise}"/>
+                <DataGridTextColumn Header="contrat" Width="auto" Binding="{Binding Path=contrat}"/>
+                <DataGridTextColumn Header="objet" Width="auto" Binding="{Binding Path=objet}"/>
+                <DataGridTextColumn Header="Num Passport" Width="auto" Binding="{Binding Path=num_passport}"/>
+                <DataGridTextColumn Header="Observation" Width="auto" Binding="{Binding Path=observation}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+
+</Window>

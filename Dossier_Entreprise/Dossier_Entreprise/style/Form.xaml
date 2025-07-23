@@ -1,0 +1,163 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Dossier_Entreprise.style">
+
+    <!--<Style  TargetType="{x:Type WindowChrome}">
+        <Setter Property="WindowChrome">
+            <Setter.Value>
+                <WindowChrome CaptionHeight="1"
+            CornerRadius="0"
+            GlassFrameThickness="0"
+            ResizeBorderThickness="4"/>
+            </Setter.Value>
+        </Setter>
+    </Style>-->
+    <!--<Style TargetType="{x:Type Border}">
+        <Style.Triggers>
+            --><!-- Add to avoid border disappearing when window is maximised --><!--
+            <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                 Value="Maximized">
+                <Setter Property="Margin" Value="10"/>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding WindowState, RelativeSource={RelativeSource AncestorType=Window}}" 
+                                 Value="Normal">
+                <Setter Property="Margin" Value="0"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>-->
+
+    <Style x:Key="errorContainer" TargetType="Grid">
+        <Setter Property="Background" Value="Red"/>
+        <!--<Setter Property="Visibility" Value="Hidden"/>-->
+        <Setter Property="MaxHeight" Value="0"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Bottom"/>
+        <Setter Property="FlowDirection" Value="{DynamicResource direction2}" />
+    </Style>
+    <Style x:Key="error" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <Setter Property="Height" Value="Auto"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="Margin" Value="25,0"/>
+        <Setter Property="Padding" Value="0,10"/>
+        <Setter Property="FlowDirection" Value="{DynamicResource direction2}" />
+    </Style>
+    <Style  TargetType="ScrollViewer" BasedOn="{StaticResource MaterialDesignScrollViewer}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+    </Style>
+    <!--<Style x:Key="datagridScroll" TargetType="ScrollViewer" BasedOn="{StaticResource MaterialDesignScrollViewer}">
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalAlignment" Value="Stretch"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Auto"/>
+        <Setter Property="MaxHeight" Value="300"/>
+        <Setter Property="VerticalAlignment" Value="Top"/>
+        <Setter Property="FlowDirection" Value="{DynamicResource direction2}" />
+    </Style>-->
+    <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Width" Value="300"/>
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <!--<Setter Property="CharacterCasing" Value="Upper"/>-->
+    </Style>
+    <!--<Style TargetType="TextBlock">
+        <Setter Property="Margin" Value="25,5" />
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontWeight" Value="24"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        --><!--<Setter Property="CharacterCasing" Value="Upper"/>--><!--
+    </Style>-->
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource MaterialDesignFloatingHintPasswordBox}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+        <!--<Setter Property="CharacterCasing" Value="Upper"/>-->
+    </Style>
+    <Style x:Key="title" TargetType="TextBlock">
+        <Setter Property="Margin" Value="10" />
+        <Setter Property="FontSize" Value="24"/>
+        <Setter Property="Opacity" Value="0.5"/>
+        <Setter Property="TextWrapping" Value="Wrap"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
+    <Style TargetType="DatePicker" BasedOn="{StaticResource MaterialDesignFloatingHintDatePicker}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
+    <Style TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignFloatingHintComboBox}">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontFamily" Value="Arial"/>
+    </Style>
+    <Style TargetType="ComboBoxItem">
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="HorizontalContentAlignment" Value="Left" />
+    </Style>
+    <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+        <Setter Property="Background" Value="Blue" />
+    </Style>
+    <Style TargetType="Button" x:Key="FormButton" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+        <Setter Property="Width" Value="auto"/>
+        <Setter Property="Padding" Value="10,0"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+    <Style TargetType="Button" x:Key="IconButton" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+        <Setter Property="Foreground" Value="Blue" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+    </Style>
+    <Style TargetType="Button" x:Key="MenuButton" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+        <Setter Property="Foreground" Value="White" />
+        <Setter Property="Background" Value="Blue" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+    </Style>
+    <Style TargetType="Button" x:Key="MenuButtonOutline" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+        <Setter Property="Foreground" Value="Blue" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+    </Style>
+    <Style TargetType="Button" x:Key="bordButton" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+        <Setter Property="Foreground" Value="Blue" />
+        <Setter Property="Margin" Value="5,0" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="ToolTipService.Placement" Value="Top" />
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="BorderBrush" Value="{x:Null}" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+    </Style>
+
+    <Style TargetType="StackPanel">
+        <Setter Property="HorizontalAlignment" Value="Center" />
+    </Style>
+    
+    <!--menu-->
+    <Style TargetType="Menu" BasedOn="{StaticResource MaterialDesignMenu}">
+        <Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <StackPanel VerticalAlignment="Center"/>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+    <Style TargetType="MenuItem" BasedOn="{StaticResource MaterialDesignMenuItem}">
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+
+</ResourceDictionary>
