@@ -148,6 +148,10 @@ namespace Dossier_Entreprise
         }
 
 
+        public static string getDoubleDecimalSeparator()
+        {
+            return System.Threading.Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator;
+        }
         /*****************/
         //public static void fillStructure(ComboBox list, IList<Structure> structures, Int64 selectedIndex=-1)
         //{
